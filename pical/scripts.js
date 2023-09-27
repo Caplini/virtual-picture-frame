@@ -1,9 +1,9 @@
 let count = 0;
-let pi = 4;  // start with first term of the series
-let sign = -1;
+let pi = 0;
+let sign = 1;
 
 function calculatePi() {
-    pi += sign * (4 / (1 + count * 2));
+    pi += 4 * sign / (2 * count + 1);
     sign *= -1;
     count++;
 
@@ -11,7 +11,7 @@ function calculatePi() {
     document.getElementById("count").textContent = count;
 
     let filler = document.getElementById("filler");
-    filler.style.width = (count % 100) + "%"; // Simple way to visualize progress
+    filler.style.width = (count % 100) + "%";  // Simple way to visualize progress
 }
 
-setInterval(calculatePi, 100); // Generate faster for better visualization
+setInterval(calculatePi, 100);  // Generate faster for better visualization
